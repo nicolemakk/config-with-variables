@@ -24,6 +24,7 @@ variable "instance_type" {
 variable "cluster_name" {
   type = string
   description = "The name of the EC2 cluster"
+  default = "atlas"
 }
 
 variable "cidr_block" {

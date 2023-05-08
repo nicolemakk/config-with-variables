@@ -1,8 +1,8 @@
 module "ec2-cluster" {
-  source = "app.staging.terraform.io/stark-enterprises/ec2-cluster/fakewebservices"
-  version = "0.1.0"
+  source = "github.com/sebasslash/terraform-fakewebservices-ec2-cluster"
 
   token = var.token
+  hostname = var.hostname
   instance_type = var.instance_type
   cluster_name = var.cluster_name
   cidr_block = var.cidr_block
@@ -14,7 +14,12 @@ variable "token" {
   description = "The token to configure the fakewebservices provider. Must be a User or Team TFC/E token."
   sensitive = true
 }
-
+  
+variable "hostname" {
+  type = string
+  default = "app.terraform.io"
+  description = "The hostname to use"
+}
 
 variable "instance_type" {
   type = string

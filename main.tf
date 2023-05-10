@@ -5,7 +5,7 @@ module "ec2-cluster" {
   hostname = var.hostname
   instance_type = var.instance_type
   cluster_name = var.cluster_name
-  cidr_block = var.cidr_block
+  cidr_block = "198.51.100.0/24"
   db_size = var.db_size
 }
 
